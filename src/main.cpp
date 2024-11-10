@@ -8,11 +8,8 @@
 int main()
 {
     srand(time(0));
-    auto window = sf::RenderWindow({ 640u, 480u }, "Shooter");
+    auto window = sf::RenderWindow({ 1080u, 1080u }, "Shooter");
     window.setFramerateLimit(60);
-
-    bool isDragging = false;
-    sf::Vector2f initialPosition;
 
     while (window.isOpen())
     {
