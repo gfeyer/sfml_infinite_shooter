@@ -1,7 +1,9 @@
 #include "world.hpp"
 
 #include <iostream>
+#include <memory>
 
+#include "weapons/weapon.hpp"
 #include "util/logger.hpp"
 
 World::World()
@@ -12,6 +14,8 @@ World::World()
 
 	// Set player position
 	player.setPosition({ conf::WINDOW_WIDTH / 2, conf::WINDOW_HEIGHT });
+
+	Weapon weapon;
 }
 World::~World()
 {

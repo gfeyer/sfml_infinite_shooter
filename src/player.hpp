@@ -1,9 +1,12 @@
 #ifndef PLAYER_HPP
 #define PLAYER_HPP
 
+#include <memory>
+
 #include <SFML/Graphics.hpp>
 
 #include "conf.hpp"
+#include "weapons/weapon.hpp"
 
 class Player
 {
@@ -30,6 +33,7 @@ private:
 
 	// Rendering
 	sf::ConvexShape triangle;
+
 };
 
 #endif // PLAYER_HPP
