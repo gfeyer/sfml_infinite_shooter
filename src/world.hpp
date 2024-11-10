@@ -19,8 +19,10 @@ public:
 
 private:
 	void updateEnemies(float dt);
-	void renderEnemies(sf::RenderWindow& window);
+	void updatePlayer(float dt);
 
+	void renderEnemies(sf::RenderWindow& window);
+	void renderPlayer(sf::RenderWindow& window);
 
 private:
 	std::list<Enemy> enemies;

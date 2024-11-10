@@ -9,8 +9,10 @@ World::World()
 
 	Enemy e{ sf::Vector2f(100, 100) };
 	this->enemies.push_back(e);
-}
 
+	// Set player position
+	player.setPosition({ conf::WINDOW_WIDTH / 2, conf::WINDOW_HEIGHT });
+}
 World::~World()
 {
 }
@@ -18,11 +20,13 @@ World::~World()
 void World::update(float dt)
 {
 	updateEnemies(dt);
+	updatePlayer(dt);
 }
 
 void World::render(sf::RenderWindow& window)
 {
 	renderEnemies(window);
+	renderPlayer(window);
 }
 
 void World::handleInput(sf::Event event)
@@ -51,9 +55,26 @@ void World::updateEnemies(float dt)
 	}
 }
 
+void World::updatePlayer(float dt)
+{
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
+		player.moveLeft();
+	}
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
+		player.moveRight();
+	}
+
+	player.update(dt);
+}
+
 void World::renderEnemies(sf::RenderWindow& window)
 {
 	for(const auto& enemy : enemies) {
 		enemy.render(window);
 	}
+}
+
+void World::renderPlayer(sf::RenderWindow& window)
+{
+	player.render(window);
 }

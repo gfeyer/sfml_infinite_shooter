@@ -12,7 +12,7 @@ int main()
     log_debug << "Starting simulation";
 
     srand((unsigned int)time(0));
-    auto window = sf::RenderWindow({ 1080u, 1080u }, "Shooter");
+    auto window = sf::RenderWindow({ conf::WINDOW_WIDTH, conf::WINDOW_HEIGHT}, "Shooter");
     window.setFramerateLimit(60);
 
 	World world;
