@@ -13,8 +13,14 @@ public:
 	void render(sf::RenderWindow& window) const;
 
 private:
+
+	// Properties
 	sf::Vector2f position;
+	unsigned int health;
+
+	// Rendering
 	sf::CircleShape shape;
+	sf::Text text;
 };
 
 #endif // ENEMY_HPP

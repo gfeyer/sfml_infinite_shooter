@@ -21,11 +21,11 @@ add_executable(main ${SOURCES})
 target_link_libraries(main PRIVATE sfml-system sfml-window sfml-graphics sfml-audio sfml-network)
 
 # Copy the res folder to the bin directory after building
-# add_custom_command(
-#     TARGET main POST_BUILD
-#     COMMAND ${CMAKE_COMMAND} -E copy_directory
-#     ${CMAKE_SOURCE_DIR}/res $<TARGET_FILE_DIR:main>/res
-# )
+add_custom_command(
+    TARGET main POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy_directory
+    ${CMAKE_SOURCE_DIR}/res $<TARGET_FILE_DIR:main>/res
+)
 
 # Set the C++ standard required
 target_compile_features(main PRIVATE cxx_std_17)
