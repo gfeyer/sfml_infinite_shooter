@@ -8,7 +8,7 @@
 #include "util/resource_manager.hpp"
 Enemy::Enemy(sf::Vector2f pos) : position(pos)
 {
-	health = 2;
+	health = conf::ENEMY_STARTING_HEALTH;
 
 	// Shape
 	shape.setRadius(conf::ENEMY_CIRCLE_RADIUS);
@@ -36,6 +36,12 @@ Enemy::~Enemy()
 
 void Enemy::update(float dt)
 {
+	// move enemy down at constant speed
+	position.y += conf::ENEMY_SPEED * dt;
+	shape.setPosition(position);
+	text.setPosition(position);
+
+	text.setString(std::to_string(health));
 }
 
 void Enemy::render(sf::RenderWindow& window) const

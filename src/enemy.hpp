@@ -12,6 +12,13 @@ public:
 	void update(float dt);
 	void render(sf::RenderWindow& window) const;
 
+	// 
+	void hit() { health--; }
+
+	// Getters
+	unsigned int getHealth() const { return health; }
+	sf::FloatRect getGlobalBounds() const { return shape.getGlobalBounds(); }
+
 private:
 
 	// Properties

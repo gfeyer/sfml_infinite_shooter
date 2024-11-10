@@ -14,6 +14,7 @@ public:
 
 	void update(float dt);
 	void render(sf::RenderWindow& window);
+	void handleInput(sf::Event event);
 
 private:
 	void updateEnemies(float dt);

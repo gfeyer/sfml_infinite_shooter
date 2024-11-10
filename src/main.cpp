@@ -30,6 +30,7 @@ int main()
             if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Escape) {
                 window.close();
             }
+            world.handleInput(event);
         }
 
         // Update(dt)
