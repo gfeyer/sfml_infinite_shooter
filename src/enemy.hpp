@@ -6,11 +6,15 @@
 class Enemy
 {
 public:
-	Enemy();
+	Enemy(sf::Vector2f pos);
 	~Enemy();
 
 	void update(float dt);
-	void render(sf::RenderWindow& window);
+	void render(sf::RenderWindow& window) const;
+
+private:
+	sf::Vector2f position;
+	sf::CircleShape shape;
 };
 
 #endif // ENEMY_HPP

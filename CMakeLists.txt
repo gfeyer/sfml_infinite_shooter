@@ -11,7 +11,7 @@ option(BUILD_SHARED_LIBS "Build shared libraries" OFF)
 find_package(SFML COMPONENTS system window graphics audio network CONFIG REQUIRED)
 
 # Include src directory
-# include_directories(${CMAKE_SOURCE_DIR}/src)
+include_directories(${CMAKE_SOURCE_DIR}/src)
 
 # Define the executable
 file(GLOB_RECURSE SOURCES "src/*.cpp")
