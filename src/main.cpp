@@ -11,7 +11,7 @@ int main()
     logger::SetLevelDebug();
     log_debug << "Starting simulation";
 
-    srand(time(0));
+    srand((unsigned int)time(0));
     auto window = sf::RenderWindow({ 1080u, 1080u }, "Shooter");
     window.setFramerateLimit(60);
 

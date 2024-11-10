@@ -6,6 +6,7 @@
 #include <SFML/Graphics.hpp>
 
 #include "enemy.hpp"
+#include "player.hpp"
 
 class World {
 public:
@@ -23,6 +24,7 @@ private:
 
 private:
 	std::list<Enemy> enemies;
+	Player player;
 };
 
 #endif // !
