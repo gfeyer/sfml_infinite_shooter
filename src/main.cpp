@@ -1,15 +1,17 @@
 #include <iostream>
 
 #include <SFML/Graphics.hpp>
-#include <SFML/Audio.hpp>
 
-#include <iostream>
+#include "world.hpp"
 
 int main()
 {
     srand(time(0));
     auto window = sf::RenderWindow({ 1080u, 1080u }, "Shooter");
     window.setFramerateLimit(60);
+
+	World world;
+    auto time = sf::Clock();
 
     while (window.isOpen())
     {
@@ -26,12 +28,13 @@ int main()
         }
 
         // Update(dt)
-
+        world.update(time.restart().asSeconds());
 
         // Draw(window)
         window.clear();
 
         // Render
+        world.render(window);
 
         window.display();
     }

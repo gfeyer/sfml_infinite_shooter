@@ -10,12 +10,15 @@ option(BUILD_SHARED_LIBS "Build shared libraries" OFF)
 # Find SFML components
 find_package(SFML COMPONENTS system window graphics audio network CONFIG REQUIRED)
 
+# Include src directory
+# include_directories(${CMAKE_SOURCE_DIR}/src)
+
 # Define the executable
-file(GLOB SOURCES src/*.cpp)
+file(GLOB_RECURSE SOURCES "src/*.cpp")
 add_executable(main ${SOURCES})
 
 # Link libraries to the executable
-target_link_libraries(main PRIVATE sfml-system sfml-window sfml-graphics sfml-audio)
+target_link_libraries(main PRIVATE sfml-system sfml-window sfml-graphics sfml-audio sfml-network)
 
 # Copy the res folder to the bin directory after building
 # add_custom_command(
