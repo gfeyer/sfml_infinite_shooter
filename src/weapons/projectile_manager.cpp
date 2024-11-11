@@ -20,9 +20,16 @@ ProjectileManager& ProjectileManager::getInstance()
 
 void ProjectileManager::update(float dt)
 {
-	for(auto& projectile : projectiles)
+	for (auto it = projectiles.begin(); it != projectiles.end();)
 	{
-		projectile.shape.move(0, -projectile.speed * dt);
+		it->shape.move(0, -it->speed * dt);
+		if (it->shape.getPosition().y < 0)
+		{
+			it = projectiles.erase(it);
+			continue;
+		}
+
+		++it;
 	}
 }
 
@@ -44,4 +51,6 @@ void ProjectileManager::addProjectile(sf::Vector2f position, unsigned int type)
 	projectile.shape.setFillColor(sf::Color::Yellow);
 
 	projectiles.push_back(projectile);
+
+	log_debug << "projectiles: " << projectiles.size();
 }

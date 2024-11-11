@@ -30,7 +30,6 @@ public:
 private:
 	// Properties
 	sf::Vector2f position;
-	unsigned int health;
 
 	// Rendering
 	sf::ConvexShape triangle;
