@@ -23,6 +23,7 @@ public:
 
 	// Setters
 	void setPosition(sf::Vector2f pos) { position = pos; }
+	void setWeapon(std::unique_ptr<Weapon> weapon) { this->weapon = std::move(weapon); }
 	
 	// Getters
 
@@ -33,6 +34,9 @@ private:
 
 	// Rendering
 	sf::ConvexShape triangle;
+
+	// Weapon
+	std::unique_ptr<Weapon> weapon;
 
 };
 

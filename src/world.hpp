@@ -20,9 +20,11 @@ public:
 private:
 	void updateEnemies(float dt);
 	void updatePlayer(float dt);
+	void updateProjectiles(float dt);
 
 	void renderEnemies(sf::RenderWindow& window);
 	void renderPlayer(sf::RenderWindow& window);
+	void renderProjectiles(sf::RenderWindow& window);
 
 private:
 	std::list<Enemy> enemies;

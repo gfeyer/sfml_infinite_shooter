@@ -3,6 +3,7 @@
 #include <iostream>
 #include <memory>
 
+#include "weapons/projectile_manager.hpp"
 #include "weapons/weapon.hpp"
 #include "util/logger.hpp"
 
@@ -16,6 +17,7 @@ World::World()
 	player.setPosition({ conf::WINDOW_WIDTH / 2, conf::WINDOW_HEIGHT });
 
 	Weapon weapon;
+	player.setWeapon(std::make_unique<Weapon>(weapon));
 }
 World::~World()
 {
@@ -24,12 +26,14 @@ World::~World()
 void World::update(float dt)
 {
 	updateEnemies(dt);
+	updateProjectiles(dt);
 	updatePlayer(dt);
 }
 
 void World::render(sf::RenderWindow& window)
 {
 	renderEnemies(window);
+	renderProjectiles(window);
 	renderPlayer(window);
 }
 
@@ -71,6 +75,11 @@ void World::updatePlayer(float dt)
 	player.update(dt);
 }
 
+void World::updateProjectiles(float dt)
+{
+	ProjectileManager::getInstance().update(dt);
+}
+
 void World::renderEnemies(sf::RenderWindow& window)
 {
 	for(const auto& enemy : enemies) {
@@ -81,4 +90,9 @@ void World::renderEnemies(sf::RenderWindow& window)
 void World::renderPlayer(sf::RenderWindow& window)
 {
 	player.render(window);
+}
+
+void World::renderProjectiles(sf::RenderWindow& window)
+{
+	ProjectileManager::getInstance().render(window);
 }

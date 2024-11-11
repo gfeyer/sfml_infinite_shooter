@@ -8,6 +8,14 @@ public:
 	Weapon();
 	~Weapon();
 	void shoot(sf::Vector2f position);
+
+	void update(float dt);
+
+private:
+	float timeBetweenShots = 1.0f;
+	float timeSinceLastShot = 0.0f;
+
+	unsigned int projectileType = 1;
 };
 
 #endif
