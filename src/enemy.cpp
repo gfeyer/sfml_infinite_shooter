@@ -6,10 +6,8 @@
 #include "conf.hpp"
 #include "util/logger.hpp"
 #include "util/resource_manager.hpp"
-Enemy::Enemy(sf::Vector2f pos) : position(pos)
+Enemy::Enemy(sf::Vector2f pos, unsigned int h) : position(pos), health(h)
 {
-	health = conf::ENEMY_STARTING_HEALTH;
-
 	// Shape
 	shape.setRadius(conf::ENEMY_CIRCLE_RADIUS);
 	shape.setOutlineThickness(conf::ENEMY_CIRCLE_THICKNESS);

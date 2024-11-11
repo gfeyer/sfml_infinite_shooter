@@ -29,14 +29,20 @@ void ProjectileManager::update(float dt)
 			continue;
 		}
 
+		bool hit = false;
 		for (auto& enemy : *enemiesRef)
 		{
 			if (it->shape.getGlobalBounds().intersects(enemy.getGlobalBounds()))
 			{
+				hit = true;
 				enemy.hit();
-				it = projectiles.erase(it);
 				break;
 			}
+		}
+
+		if (hit) {
+			it = projectiles.erase(it);
+			continue;
 		}
 
 		++it;
@@ -61,6 +67,4 @@ void ProjectileManager::addProjectile(sf::Vector2f position, unsigned int type)
 	projectile.shape.setFillColor(sf::Color::Yellow);
 
 	projectiles.push_back(projectile);
-
-	log_debug << "projectiles: " << projectiles.size();
 }

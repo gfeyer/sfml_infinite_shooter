@@ -12,7 +12,7 @@ namespace conf {
 	const std::string FONT_1 = "res/fonts/dh.otf";
 
 	// Resolution
-	const unsigned int WINDOW_WIDTH = 1080;
-	const unsigned int WINDOW_HEIGHT = 1080;
+	const unsigned int WINDOW_WIDTH = 512;
+	const unsigned int WINDOW_HEIGHT = 1024;
 
 }

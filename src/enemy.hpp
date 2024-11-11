@@ -6,7 +6,7 @@
 class Enemy
 {
 public:
-	Enemy(sf::Vector2f pos);
+	Enemy(sf::Vector2f pos, unsigned int h=1);
 	~Enemy();
 
 	void update(float dt);

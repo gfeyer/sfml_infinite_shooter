@@ -55,6 +55,14 @@ void World::handleInput(sf::Event event)
 
 void World::updateEnemies(float dt)
 {
+	timeSinceLastSpawn += dt;
+	if (timeSinceLastSpawn >= timeBetweenSpawns) {
+		timeSinceLastSpawn = 0;
+
+		Enemy e{ sf::Vector2f(rand() % conf::WINDOW_WIDTH, 0), (unsigned int)rand() % 10 };
+		enemies.push_back(e);
+	}
+
 	for (auto it = enemies.begin(); it != enemies.end();) {
 		it->update(dt);
 		if(it->getHealth() <= 0) {

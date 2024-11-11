@@ -29,6 +29,8 @@ private:
 private:
 	std::list<Enemy> enemies;
 	Player player;
+	float timeBetweenSpawns = 1.0f;
+	float timeSinceLastSpawn = 0.0f;
 };
 
 #endif // !
