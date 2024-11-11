@@ -12,7 +12,7 @@ public:
 	void update(float dt);
 
 private:
-	float timeBetweenShots = 1.0f;
+	float timeBetweenShots = 0.3f;
 	float timeSinceLastShot = 0.0f;
 
 	unsigned int projectileType = 1;

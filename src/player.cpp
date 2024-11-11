@@ -18,7 +18,7 @@ void Player::update(float dt)
 	triangle.setPosition(position);
 	if (weapon) {
 		weapon->update(dt);
-		weapon->shoot(position);
+		weapon->shoot({position.x - 5, position.y - 100});
 	}
 }
 

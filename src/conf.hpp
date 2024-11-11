@@ -6,7 +6,7 @@ namespace conf {
 	const unsigned int ENEMY_STARTING_HEALTH = 15;
 
 	// Player
-	const unsigned int PLAYER_SPEED = 10;
+	const unsigned int PLAYER_SPEED = 7;
 
 	// Fonts
 	const std::string FONT_1 = "res/fonts/dh.otf";
