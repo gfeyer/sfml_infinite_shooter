@@ -6,6 +6,7 @@
 #include "SFML/Graphics.hpp"
 
 #include "weapons/projectile.hpp"
+#include "enemy.hpp"
 
 class ProjectileManager
 {
@@ -20,8 +21,11 @@ public:
 	void render(sf::RenderWindow& window);
 	void addProjectile(sf::Vector2f position, unsigned int type);
 
+	void setEnemiesRef(std::list<Enemy>* enemies) { this->enemiesRef = enemies; }
+
 private:
 	std::list<Projectile> projectiles;
+	std::list<Enemy>* enemiesRef; // for checking collisions
 };
 
 #endif // PROJECTILE_MANAGER_HPP

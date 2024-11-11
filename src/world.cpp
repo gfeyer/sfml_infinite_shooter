@@ -9,9 +9,12 @@
 
 World::World()
 {
-
+	// Enemies
 	Enemy e{ sf::Vector2f(100, 100) };
 	this->enemies.push_back(e);
+
+	// Projectile manager
+	ProjectileManager::getInstance().setEnemiesRef(&enemies);
 
 	// Set player position
 	player.setPosition({ conf::WINDOW_WIDTH / 2, conf::WINDOW_HEIGHT });
@@ -56,10 +59,9 @@ void World::updateEnemies(float dt)
 		it->update(dt);
 		if(it->getHealth() <= 0) {
 			it = enemies.erase(it); // erase returns the next iterator so no need to iterate again
+			continue;
 		}
-		else {
-			++it;
-		}
+		++it;
 	}
 }
 

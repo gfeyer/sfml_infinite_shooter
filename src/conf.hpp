@@ -3,7 +3,7 @@ namespace conf {
 	const unsigned int ENEMY_CIRCLE_RADIUS = 20;
 	const unsigned int ENEMY_CIRCLE_THICKNESS = 5;
 	const unsigned int ENEMY_SPEED = 100;
-	const unsigned int ENEMY_STARTING_HEALTH = 15;
+	const unsigned int ENEMY_STARTING_HEALTH = 2;
 
 	// Player
 	const unsigned int PLAYER_SPEED = 7;

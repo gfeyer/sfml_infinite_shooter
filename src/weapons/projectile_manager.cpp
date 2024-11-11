@@ -29,6 +29,16 @@ void ProjectileManager::update(float dt)
 			continue;
 		}
 
+		for (auto& enemy : *enemiesRef)
+		{
+			if (it->shape.getGlobalBounds().intersects(enemy.getGlobalBounds()))
+			{
+				enemy.hit();
+				it = projectiles.erase(it);
+				break;
+			}
+		}
+
 		++it;
 	}
 }
