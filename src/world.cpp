@@ -56,7 +56,7 @@ void World::handleInput(sf::Event event)
 void World::updateEnemies(float dt)
 {
 	timeSinceLastSpawn += dt;
-	if (timeSinceLastSpawn >= timeBetweenSpawns) {
+	if (timeSinceLastSpawn >= conf::ENEMY_SPAWN_INTERVAL) {
 		timeSinceLastSpawn = 0;
 
 		Enemy e{ sf::Vector2f(rand() % conf::WINDOW_WIDTH, 0), (unsigned int)rand() % 10 };
