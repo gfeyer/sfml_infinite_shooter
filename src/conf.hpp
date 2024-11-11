@@ -4,7 +4,7 @@ namespace conf {
 	const unsigned int ENEMY_CIRCLE_THICKNESS = 5;
 	const unsigned int ENEMY_SPEED = 100;
 	const unsigned int ENEMY_STARTING_HEALTH = 2;
-	const float ENEMY_SPAWN_INTERVAL = 1.0f;
+	const float ENEMY_SPAWN_INTERVAL = 0.5f;
 
 	// Player
 	const unsigned int PLAYER_SPEED = 7;
